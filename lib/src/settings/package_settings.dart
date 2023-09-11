@@ -2,15 +2,15 @@ import '../configs/package_default_settings.dart';
 
 class PackageSettings {
   final String inputFilepath;
-  final String outputDirectory;
+  final String outputFilepath;
 
   PackageSettings({
     required this.inputFilepath,
-    required String? outputDirectory,
-  })  : outputDirectory =
-      outputDirectory ?? PackageDefaultSettings.outputDirectory;
+    required String? outputFilepath,
+  })  : outputFilepath =
+      outputFilepath ?? PackageDefaultSettings.outputFilepath;
 
   @override
   String toString() =>
-      '{inputFilepath: $inputFilepath, outputDirectory: $outputDirectory';
+      '{inputFilepath: $inputFilepath, outputFilepath: $outputFilepath';
 }
