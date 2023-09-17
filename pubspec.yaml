@@ -1,6 +1,6 @@
 name: arb_merger
 description: The package that merge some ARB files every locale into single ARB file.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/soosuuk/arb_merger
 
 environment:

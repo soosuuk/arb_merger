@@ -7,7 +7,7 @@ import 'package:yaml/yaml.dart';
 /// A class of arguments which the user can specify in pubspec.yaml
 class YamlArguments {
   static const inputFilepath = 'input_filepath';
-  static const outputFilepath = 'output_directory';
+  static const outputFilepath = 'input_filepath';
   static const supportedLocales = 'supported_locales';
 }
 
@@ -29,12 +29,18 @@ class YamlParser {
         exit(0);
       }
 
+      final outputFilepath = yamlMap[YamlArguments.outputFilepath];
+      if (outputFilepath == null) {
+        print('Error! Output filepath not defined!');
+        exit(0);
+      }
+
       final supportedLocales = yamlMap[YamlArguments.supportedLocales];
 
       return PackageSettings(
         supportedLocales: supportedLocales.toList().cast<String>(),
         inputFilepath: inputFilepath,
-        outputFilepath: yamlMap[YamlArguments.outputFilepath],
+        outputFilepath: outputFilepath,
       );
     }
 
